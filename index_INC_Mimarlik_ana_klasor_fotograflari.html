@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INC Mimarlık | İnşaat Proje Ltd. Şti.</title>
+<meta name="description" content="INC Mimarlık — mimari proje, cephe tasarımı, inşaat ve proje uygulama hizmetleri.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#071b31; --navy2:#0c2946; --blue:#1268a5; --blue2:#2389c8;
+  --ice:#eaf4fb; --white:#fff; --paper:#f6f8fa; --ink:#102033;
+  --muted:#6b7b8d; --gold:#d6ad55; --line:rgba(7,27,49,.11);
+  --shadow:0 20px 60px rgba(7,27,49,.13);
+  --radius:24px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;color:var(--ink);font-family:"DM Sans",sans-serif;background:var(--paper);line-height:1.6}
+a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+.container{width:min(1180px,92%);margin:auto}
+.topline{height:4px;background:linear-gradient(90deg,var(--navy),var(--blue2),var(--gold),var(--blue2),var(--navy))}
+header{position:fixed;top:4px;left:0;right:0;z-index:50;background:rgba(7,27,49,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.1)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em;color:#fff}
+.brand img{width:54px;height:54px;object-fit:contain}
+.brand span{font-family:Manrope;font-size:14px}.brand small{display:block;color:#b9cbe0;font-weight:500;font-size:9px;letter-spacing:.12em;margin-top:1px}
+nav{display:flex;align-items:center;gap:28px;color:#e8f1f9;font-size:14px;font-weight:600}
+nav a{opacity:.9;transition:.25s} nav a:hover{color:#fff;opacity:1}
+.nav-cta{padding:11px 17px;border:1px solid rgba(214,173,85,.6);border-radius:999px;color:#fff}
+.menu{display:none;background:none;border:0;color:#fff;font-size:28px}
+.hero{min-height:92vh;position:relative;display:flex;align-items:end;overflow:hidden;background:#071b31}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,18,34,.88) 0%,rgba(4,18,34,.54) 43%,rgba(4,18,34,.15) 100%),linear-gradient(0deg,rgba(4,18,34,.65),transparent 45%)}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-content{position:relative;z-index:2;padding:170px 0 92px;color:#fff;max-width:820px}
+.kicker{display:inline-flex;align-items:center;gap:9px;color:#d8e8f5;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.kicker:before{content:"";width:34px;height:2px;background:var(--gold)}
+h1{font-family:Manrope;font-size:clamp(42px,6vw,76px);line-height:1.02;margin:18px 0 22px;letter-spacing:-.04em}
+.hero p{font-size:18px;color:#d9e6f2;max-width:650px;margin:0 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;border-radius:999px;font-weight:700;font-size:14px;transition:.25s}
+.btn-primary{background:var(--blue2);color:#fff;box-shadow:0 12px 30px rgba(35,137,200,.28)} .btn-primary:hover{transform:translateY(-2px)}
+.btn-light{border:1px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+.stats{position:relative;margin-top:-1px;background:var(--navy);color:#fff;border-top:1px solid rgba(255,255,255,.08)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:27px 18px;border-right:1px solid rgba(255,255,255,.08)} .stat:last-child{border:0}
+.stat b{display:block;font:800 30px Manrope;color:#fff}.stat span{font-size:12px;color:#a9bdd1}
+section{padding:105px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}
+.eyebrow{color:var(--blue);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+h2{font:800 clamp(32px,4vw,50px) Manrope;line-height:1.08;letter-spacing:-.04em;margin:9px 0 0;color:var(--navy)}
+.lead{max-width:510px;color:var(--muted);margin:0}
+.about{background:#fff}.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.about-photo{position:relative}.about-photo img{height:540px;width:100%;object-fit:cover;border-radius:var(--radius)}
+.about-badge{position:absolute;right:-18px;bottom:28px;background:var(--navy);color:#fff;padding:22px 24px;border-radius:18px;box-shadow:var(--shadow)}
+.about-badge strong{font:800 30px Manrope;color:var(--gold);display:block}.about-badge span{font-size:12px;color:#b9cbe0}
+.about-copy p{color:var(--muted);font-size:16px}.line-list{margin-top:28px;border-top:1px solid var(--line)}
+.line-list div{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);font-weight:600}.line-list i{color:var(--blue);font-style:normal}
+.services{background:linear-gradient(180deg,#f6f8fa,#edf5fa)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:27px;min-height:210px;transition:.3s;position:relative;overflow:hidden}.card:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:rgba(35,137,200,.07);right:-70px;bottom:-70px}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(35,137,200,.25)}
+.icon{width:46px;height:46px;border-radius:14px;background:var(--ice);color:var(--blue);display:grid;place-items:center;font-weight:800;margin-bottom:20px}.card h3{font:700 20px Manrope;margin:0 0 9px}.card p{font-size:14px;color:var(--muted);margin:0}
+.projects{background:#fff}.project-feature{display:grid;grid-template-columns:1.15fr .85fr;min-height:500px;background:var(--navy);border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
+.project-feature img{width:100%;height:100%;object-fit:cover;min-height:500px}.project-info{padding:55px;color:#fff;display:flex;flex-direction:column;justify-content:center}.tag{display:inline-flex;width:max-content;padding:7px 11px;border-radius:999px;background:rgba(35,137,200,.18);border:1px solid rgba(35,137,200,.35);color:#a8d8f5;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.project-info h3{font:800 38px Manrope;line-height:1.08;margin:18px 0 15px}.project-info p{color:#b9cbe0}.project-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:25px 0}.meta{padding:14px;border:1px solid rgba(255,255,255,.1);border-radius:14px}.meta small{display:block;color:#8ea8c0;font-size:10px;text-transform:uppercase;letter-spacing:.1em}.meta strong{display:block;margin-top:4px}
+.gallery{margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.gallery img{height:190px;width:100%;object-fit:cover;border-radius:16px;cursor:pointer;transition:.3s}.gallery img:hover{transform:scale(1.02)}
+.arch{background:var(--paper)}.arch-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.arch-item{position:relative;overflow:hidden;border-radius:20px;min-height:270px;background:#dce8f0}.arch-item:nth-child(1){grid-column:span 7;grid-row:span 2}.arch-item:nth-child(2){grid-column:span 5}.arch-item:nth-child(3){grid-column:span 5}.arch-item:nth-child(4){grid-column:span 4}.arch-item:nth-child(5){grid-column:span 4}.arch-item:nth-child(6){grid-column:span 4}.arch-item img{width:100%;height:100%;min-height:270px;object-fit:cover;transition:.5s}.arch-item:hover img{transform:scale(1.04)}.arch-label{position:absolute;left:16px;bottom:16px;background:rgba(7,27,49,.78);backdrop-filter:blur(10px);color:#fff;padding:9px 13px;border-radius:999px;font-size:11px;font-weight:700}
+.process{background:#fff}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}.step{background:#fff;padding:30px}.num{font:800 34px Manrope;color:var(--blue);opacity:.8}.step h3{font:700 18px Manrope;margin:14px 0 7px}.step p{color:var(--muted);font-size:14px;margin:0}
+.contact{background:var(--navy);color:#fff}.contact h2{color:#fff}.contact .lead{color:#b9cbe0}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.contact-list{margin-top:35px}.contact-item{display:flex;gap:16px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.1)}.contact-item b{display:block}.contact-item span{color:#9eb3c8;font-size:14px}
+.form{background:#fff;border-radius:24px;padding:28px;color:var(--ink)}.form h3{font:800 25px Manrope;margin:0 0 20px}.form input,.form textarea{width:100%;border:1px solid #d9e1e8;background:#f8fafc;border-radius:13px;padding:13px 14px;font:inherit;margin-bottom:11px;outline:0}.form input:focus,.form textarea:focus{border-color:var(--blue2)}.form textarea{min-height:130px;resize:vertical}.form button{border:0;cursor:pointer;width:100%;padding:14px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;font-size:15px}
+footer{background:#041426;color:#91a7bc;padding:28px 0}.footer{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800}.footer-brand img{width:44px;height:44px;object-fit:contain}.footer small{font-size:12px}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}.reveal.show{opacity:1;transform:none}
+.lightbox{position:fixed;inset:0;background:rgba(1,10,19,.92);display:none;align-items:center;justify-content:center;z-index:100;padding:30px}.lightbox.open{display:flex}.lightbox img{max-width:94vw;max-height:88vh;border-radius:16px}.close{position:absolute;right:25px;top:18px;color:#fff;font-size:38px;cursor:pointer}
+@media(max-width:900px){nav{display:none}.menu{display:block}.about-grid,.contact-grid,.project-feature{grid-template-columns:1fr}.project-info{padding:34px}.project-feature img{min-height:330px}.cards{grid-template-columns:1fr 1fr}.stats-grid{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.arch-item:nth-child(n){grid-column:span 6;grid-row:auto}.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.nav{height:70px}.brand img{width:46px;height:46px}.brand span{font-size:12px}.hero{min-height:82vh}.hero-content{padding:145px 0 62px}.hero p{font-size:16px}.stats-grid{grid-template-columns:1fr 1fr}.stat{padding:20px 12px}.stat b{font-size:24px}section{padding:76px 0}.section-head{display:block}.section-head .lead{margin-top:15px}.cards{grid-template-columns:1fr}.project-info h3{font-size:31px}.project-meta{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.gallery img{height:135px}.arch-item:nth-child(n){grid-column:span 12;min-height:250px}.arch-item img{min-height:250px}.process-grid{grid-template-columns:1fr}.contact-grid{gap:35px}.footer{display:block}.footer small{display:block;margin-top:12px}}
+
+/* VİLLA PROJESİ */
+.villa-section{background:linear-gradient(180deg,#f8fbfd 0%,#eef5f9 100%);position:relative;overflow:hidden}
+.villa-section:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:rgba(35,137,200,.055);right:-220px;top:-180px}
+.villa-wrap{position:relative}
+.villa-feature{display:grid;grid-template-columns:1.18fr .82fr;min-height:560px;border-radius:30px;overflow:hidden;background:var(--navy);box-shadow:0 25px 70px rgba(7,27,49,.18)}
+.villa-cover{position:relative;min-height:560px;overflow:hidden}
+.villa-cover img{width:100%;height:100%;object-fit:cover;transition:.7s}
+.villa-cover:hover img{transform:scale(1.035)}
+.villa-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 45%,rgba(7,27,49,.25) 100%),linear-gradient(0deg,rgba(7,27,49,.38),transparent 45%)}
+.villa-badge{position:absolute;z-index:2;left:25px;top:25px;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(12px);color:#fff;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.villa-info{padding:58px 52px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.villa-info .eyebrow{color:#8fd0f2}
+.villa-info h3{font:800 clamp(34px,4vw,52px) Manrope;line-height:1.04;letter-spacing:-.04em;margin:12px 0 18px}
+.villa-info p{color:#b9cbe0;font-size:16px;max-width:430px}
+.villa-points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0 28px}
+.villa-point{padding:15px;border:1px solid rgba(255,255,255,.1);border-radius:15px;background:rgba(255,255,255,.035)}
+.villa-point small{display:block;color:#8ea8c0;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.villa-point strong{display:block;margin-top:4px;font-size:14px}
+.villa-gallery{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:14px;margin-top:18px}
+.villa-gallery figure{margin:0;height:205px;overflow:hidden;border-radius:18px;position:relative;background:#dce8f0;cursor:pointer}
+.villa-gallery figure:first-child{height:270px;grid-row:span 1}
+.villa-gallery img{width:100%;height:100%;object-fit:cover;transition:.45s}
+.villa-gallery figure:hover img{transform:scale(1.045)}
+.villa-gallery figcaption{position:absolute;left:12px;bottom:12px;padding:7px 11px;border-radius:999px;background:rgba(7,27,49,.76);backdrop-filter:blur(8px);color:#fff;font-size:10px;font-weight:700}
+@media(max-width:900px){.villa-feature{grid-template-columns:1fr}.villa-cover{min-height:390px}.villa-info{padding:40px 34px}.villa-gallery{grid-template-columns:1fr 1fr}.villa-gallery figure:first-child{grid-column:span 2}}
+@media(max-width:600px){.villa-cover{min-height:300px}.villa-info{padding:32px 24px}.villa-info h3{font-size:34px}.villa-points{grid-template-columns:1fr}.villa-gallery{grid-template-columns:1fr 1fr}.villa-gallery figure{height:145px}.villa-gallery figure:first-child{height:190px}}
+
+
+/* İÇ MİMARİ TASARIM */
+.interior-section{background:#fff;position:relative;overflow:hidden}
+.interior-intro{display:grid;grid-template-columns:.82fr 1.18fr;gap:28px;margin-bottom:18px}
+.interior-hero{position:relative;min-height:500px;border-radius:28px;overflow:hidden;background:var(--navy)}
+.interior-hero img{width:100%;height:100%;min-height:500px;object-fit:cover;transition:.6s}
+.interior-hero:hover img{transform:scale(1.025)}
+.interior-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,27,49,.72),transparent 58%)}
+.interior-hero-text{position:absolute;z-index:2;left:28px;right:28px;bottom:28px;color:#fff}
+.interior-hero-text span{display:inline-block;padding:7px 11px;border-radius:999px;background:rgba(35,137,200,.22);border:1px solid rgba(143,208,242,.35);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.interior-hero-text h3{font:800 32px Manrope;line-height:1.08;margin:11px 0 5px}
+.interior-hero-text p{margin:0;color:#d4e3ef;font-size:13px}
+.interior-categories{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.interior-card{position:relative;min-height:241px;border-radius:22px;overflow:hidden;background:#e8eef2;cursor:pointer;box-shadow:0 12px 35px rgba(7,27,49,.08)}
+.interior-card img{width:100%;height:100%;min-height:241px;object-fit:cover;transition:.55s}
+.interior-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,27,49,.72),transparent 65%)}
+.interior-card:hover img{transform:scale(1.045)}
+.interior-card-label{position:absolute;z-index:2;left:18px;bottom:17px;color:#fff}
+.interior-card-label small{display:block;color:#b9dff3;font-size:9px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+.interior-card-label strong{font:700 19px Manrope}
+.interior-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.interior-gallery figure{margin:0;height:205px;border-radius:18px;overflow:hidden;position:relative;cursor:pointer;background:#e7edf1}
+.interior-gallery img{width:100%;height:100%;object-fit:cover;transition:.45s}
+.interior-gallery figure:hover img{transform:scale(1.04)}
+.interior-gallery figcaption{position:absolute;left:12px;bottom:12px;background:rgba(7,27,49,.76);backdrop-filter:blur(8px);color:#fff;padding:7px 11px;border-radius:999px;font-size:10px;font-weight:700}
+@media(max-width:900px){.interior-intro{grid-template-columns:1fr}.interior-hero{min-height:430px}.interior-hero img{min-height:430px}.interior-gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.interior-hero{min-height:360px}.interior-hero img{min-height:360px}.interior-categories{gap:10px}.interior-card{min-height:180px}.interior-card img{min-height:180px}.interior-gallery{grid-template-columns:1fr 1fr;gap:10px}.interior-gallery figure{height:145px}}
+
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#anasayfa">
+      <img src="logo.png" alt="INC Mimarlık">
+      <span>INC MİMARLIK<small>İNŞAAT PROJE LTD. ŞTİ.</small></span>
+    </a>
+    <nav>
+      <a href="#anasayfa">Anasayfa</a><a href="#hakkimizda">Hakkımızda</a><a href="#hizmetler">Hizmetler</a>
+      <a href="#projeler">Projeler</a><a href="#villalar">Villalar</a><a href="#ic-mimari">İç Mimari</a><a href="#mimari">Mimari Tasarım</a><a class="nav-cta" href="#iletisim">İletişim</a>
+    </nav>
+    <button class="menu" onclick="document.querySelector('nav').classList.toggle('mobile')">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="anasayfa">
+  <img class="hero-bg" src="3.jpeg" alt="INC Mimarlık Çarşı Mahallesi projesi">
+  <div class="container hero-content">
+    <div class="kicker">Mimarlık · Proje · İnşaat</div>
+    <h1>Yaşam alanlarını<br><span style="color:#8fd0f2">tasarlıyor,</span> hayata geçiriyoruz.</h1>
+    <p>INC Mimarlık; mimari tasarım, cephe çözümleri ve inşaat uygulamalarını tek çatı altında buluşturan bir proje ve uygulama firmasıdır.</p>
+    <div class="btns"><a class="btn btn-primary" href="#projeler">Projelerimizi Gör</a><a class="btn btn-light" href="#iletisim">Projenizi Konuşalım</a></div>
+  </div>
+</section>
+
+<div class="stats"><div class="container stats-grid">
+  <div class="stat"><b>01</b><span>Tasarım ve uygulama yaklaşımı</span></div>
+  <div class="stat"><b>02</b><span>Çarşı Mahallesi ve 4 eylülde devam eden projeler</span></div>
+  <div class="stat"><b>3+1</b><span>2+1 1+1 ve 2+0 konut seçenekleri</span></div>
+  <div class="stat"><b>INC</b><span>Mimarlık · İnşaat · Proje</span></div>
+</div></div>
+
+<section class="about" id="hakkimizda"><div class="container about-grid reveal">
+  <div class="about-photo"><img src="1.jpeg" alt="Çarşı Mahallesi projesi"><div class="about-badge"><strong>INC</strong><span>Proje & Uygulama</span></div></div>
+  <div class="about-copy">
+    <div class="eyebrow">Biz Kimiz?</div><h2>Tasarımın gücü,<br>uygulamanın disiplini.</h2>
+    <p>INC Mimarlık olarak mimari fikirden uygulamaya uzanan süreci bütüncül ele alıyoruz. Amacımız; işlevi, estetiği ve yapının gerçek ihtiyaçlarını aynı projede buluşturmak.</p>
+    <div class="line-list"><div><i>01</i><span>Mimari proje ve tasarım</span></div><div><i>02</i><span>Cephe tasarımı ve görselleştirme</span></div><div><i>03</i><span>İnşaat ve uygulama</span></div></div>
+  </div>
+</div></section>
+
+<section class="services" id="hizmetler"><div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">Hizmetlerimiz</div><h2>Fikrinizi yapıya<br>dönüştürelim.</h2></div><p class="lead">Projenin ilk çizgisinden sahadaki son dokunuşa kadar ihtiyaç duyduğunuz süreçleri birlikte yönetiyoruz.</p></div>
+  <div class="cards">
+    <article class="card reveal"><div class="icon">01</div><h3>Mimari Proje</h3><p>İhtiyaca göre planlama, tasarım, proje geliştirme ve mimari çözüm.</p></article>
+    <article class="card reveal"><div class="icon">02</div><h3>Cephe Tasarımı</h3><p>Yapının kimliğini güçlendiren modern cephe ve malzeme çözümleri.</p></article>
+    <article class="card reveal"><div class="icon">03</div><h3>İnşaat & Taahhüt</h3><p>Projenin sahada doğru, kontrollü ve planlı şekilde uygulanması.</p></article>
+    <article class="card reveal"><div class="icon">04</div><h3>Tadilat & Yenileme</h3><p>Mevcut yapıların kullanım, estetik ve teknik ihtiyaçlarına yönelik dönüşüm.</p></article>
+    <article class="card reveal"><div class="icon">05</div><h3>Proje Yönetimi</h3><p>Zaman, uygulama ve iş koordinasyonunu tek bir süreçte toplama.</p></article>
+    <article class="card reveal"><div class="icon">06</div><h3>Anahtar Teslim</h3><p>Tasarım ve uygulama süreçlerini bütüncül bir hizmet olarak yürütme.</p></article>
+  </div>
+</div></section>
+
+<section class="projects" id="projeler"><div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">Öne Çıkan Proje</div><h2>Çarşı Mahallesi</h2></div><p class="lead">2+1 ve 2+0 dairelerden oluşan, yapımı devam eden iki apartmanlı projemiz.</p></div>
+  <div class="project-feature reveal">
+    <img src="2.jpeg" alt="Çarşı Mahallesi iki apartman projesi">
+    <div class="project-info"><span class="tag">Devam Ediyor</span><h3>Modern yaşam için tasarlanan iki apartman.</h3><p>Çarşı Mahallesi'nde hayata geçirilen projede farklı cephe açılarını ve mimari detayları birlikte ele aldık.</p>
+      <div class="project-meta"><div class="meta"><small>Konut Tipleri</small><strong>2+1 · 2+0</strong></div><div class="meta"><small>Proje</small><strong> Apartman</strong></div></div>
+      <a class="btn btn-primary" href="#iletisim">Proje hakkında bilgi al</a>
+    </div>
+  </div>
+  <div class="gallery reveal">
+    <img src="1.jpeg" alt="Çarşı Mahallesi görünüm 1"><img src="2.jpeg" alt="Çarşı Mahallesi görünüm 2"><img src="3.jpeg" alt="Çarşı Mahallesi görünüm 3"><img src="4.jpeg" alt="Çarşı Mahallesi görünüm 4">
+  </div>
+</div></section>
+
+<section class="projects" id="projeler"><div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">Öne Çıkan Proje</div><h2>Çarşı Mahallesi</h2></div><p class="lead">3+1 ve 2+1 dairelerden oluşan, yapımı bitmiş apartman.</p></div>
+  <div class="project-feature reveal">
+    <img src="carsi-mahhallesi-fen4.jpg" alt="Çarşı Mahallesi  projesi">
+    <div class="project-info"><span class="tag">Bitmiş</span><h3>Modern yaşam için tasarlanmış.</h3><p>Çarşı Mahallesi'nde hayata geçirilen projede farklı cephe açılarını ve mimari detayları birlikte ele aldık.</p>
+      <div class="project-meta"><div class="meta"><small>Konut Tipleri</small><strong>3+1 · 2+1</strong></div><div class="meta"><small>Proje</small><strong> Apartman</strong></div></div>
+      <a class="btn btn-primary" href="#iletisim">Proje hakkında bilgi al</a>
+    </div>
+  </div>
+  <div class="gallery reveal">
+    <img src="carsi-mahhallesi-fen1.jpg" alt="Çarşı Mahallesi görünüm 1"><img src="carsi-mahhallesi-fen2.jpg" alt="Çarşı Mahallesi görünüm 2"><img src="carsi-mahhallesi-fen3.jpg" alt="Çarşı Mahallesi görünüm 3"><img src="carsi-mahhallesi-fen4.jpg" alt="Çarşı Mahallesi görünüm 4">
+  </div>
+</div></section>
+
+
+
+<section class="interior-section" id="ic-mimari"><div class="container">
+  <div class="section-head reveal">
+    <div><div class="eyebrow">İç Mimari Tasarım</div><h2>İç mekânda<br>karakter.</h2></div>
+    <p class="lead">Yaşam alanlarını yalnızca güzel değil; sıcak, dengeli ve kullanışlı olacak şekilde tasarlıyoruz.</p>
+  </div>
+
+  <div class="interior-intro">
+    <div class="interior-hero reveal">
+      <img src="salon1.png" alt="İNC Mimarlık salon iç mimari tasarımı">
+      <div class="interior-hero-text">
+        <span>Öne Çıkan Tasarım</span>
+        <h3>Modern ve sıcak yaşam alanları</h3>
+        <p>Malzeme, ışık ve mobilya bütünlüğüyle tasarlanan iç mekânlar.</p>
+      </div>
+    </div>
+
+    <div class="interior-categories">
+      <div class="interior-card reveal">
+        <img src="mutfak1.jpeg" alt="Modern mutfak tasarımı">
+        <div class="interior-card-label"><small>01 · İç Mimari</small><strong>Mutfak</strong></div>
+      </div>
+      <div class="interior-card reveal">
+        <img src="oturma-odası1.png" alt="Oturma odası tasarımı">
+        <div class="interior-card-label"><small>02 · İç Mimari</small><strong>Oturma Odası</strong></div>
+      </div>
+      <div class="interior-card reveal">
+        <img src="çocuk-odası1.jpeg" alt="Çocuk odası tasarımı">
+        <div class="interior-card-label"><small>03 · İç Mimari</small><strong>Çocuk Odası</strong></div>
+      </div>
+      <div class="interior-card reveal">
+        <img src="giyinme-odası1.jpeg" alt="Giyinme odası tasarımı">
+        <div class="interior-card-label"><small>04 · İç Mimari</small><strong>Giyinme Odası</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="interior-gallery reveal">
+    <figure><img src="mutfak2.jpeg" alt="Mutfak iç mimari tasarımı"><figcaption>Mutfak </figcaption></figure>
+    <figure><img src="salon2.jpeg" alt="Salon iç mimari tasarımı"><figcaption>Salon </figcaption></figure>
+    <figure><img src="salon3.png" alt="Salon iç mimari tasarımı"><figcaption>Salon </figcaption></figure>
+    <figure><img src="yatak-odası1.jpeg" alt="Yatak odası tasarımı"><figcaption>Yatak Odası</figcaption></figure>
+    <figure><img src="çocuk-odası2.jpeg" alt="Çocuk odası tasarımı"><figcaption>Çocuk Odası </figcaption></figure>
+    <figure><img src="salon1.png" alt="Salon tasarımı"><figcaption>Salon </figcaption></figure>
+    <figure><img src="oturma-odası1.png" alt="Oturma odası tasarımı"><figcaption>Oturma Odası</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="villa-section" id="villalar"><div class="container villa-wrap">
+  <div class="section-head reveal">
+    <div><div class="eyebrow">Özel Konut Tasarımları</div><h2>Villa Projeleri</h2></div>
+    <p class="lead">Modern mimari, güçlü cephe çizgileri ve yaşam konforunu bir araya getiren villa çalışmalarımız.</p>
+  </div>
+
+  <div class="villa-feature reveal">
+    <div class="villa-cover">
+      <span class="villa-badge">Villa Projesi</span>
+      <img src="villa1.png" alt="INC Mimarlık villa projesi ana görünüm">
+    </div>
+    <div class="villa-info">
+      <div class="eyebrow">INC MİMARLIK</div>
+      <h3>Modern yaşam için özel tasarım.</h3>
+      <p>Villa çalışmamızda sade ve güçlü mimari çizgileri, çağdaş cephe anlayışı ve ferah yaşam alanı yaklaşımıyla bir araya getirdik.</p>
+      <div class="villa-points">
+        <div class="villa-point"><small>Tasarım</small><strong>Modern Villa</strong></div>
+        <div class="villa-point"><small>Yaklaşım</small><strong>Özel Mimari Çözüm</strong></div>
+      </div>
+      <a class="btn btn-primary" href="#iletisim">Villa Projenizi Konuşalım</a>
+    </div>
+  </div>
+
+  <div class="villa-gallery reveal">
+    <figure><img src="villa1.png" alt="Villa dış görünüş"><figcaption>Dış Cephe</figcaption></figure>
+    <figure><img src="villa2.png" alt="Villa projesi görünüm 2"><figcaption>Villa Detayı</figcaption></figure>
+    <figure><img src="villa3.png" alt="Villa projesi görünüm 3"><figcaption>Proje Görünümü</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="arch" id="mimari"><div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">Mimari Tasarım</div><h2>Çizgiden cepheye.</h2></div><p class="lead">INC Mimarlık tarafından hazırlanan cephe çalışmalarından seçmeler.</p></div>
+  <div class="arch-grid reveal">
+    <div class="arch-item"><img src="b.png" alt="Mimari cephe tasarımı "><span class="arch-label">Cephe Tasarımı · </span></div>
+    <div class="arch-item"><img src="c.png" alt="Mimari cephe tasarımı "><span class="arch-label">Cephe Tasarımı · </span></div>
+    <div class="arch-item"><img src="C1.png" alt="Mimari cephe tasarımı "><span class="arch-label">Cephe Tasarımı · </span></div>
+    <div class="arch-item"><img src="C2.png" alt="Mimari cephe tasarımı "><span class="arch-label">Cephe Tasarımı · </span></div>
+    <div class="arch-item"><img src="C3.png" alt="Mimari cephe tasarımı "><span class="arch-label">Cephe Tasarımı · </span></div>
+  </div>
+</div></section>
+
+<section class="process"><div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">Çalışma Sürecimiz</div><h2>Net bir süreç,<br>sağlam bir sonuç.</h2></div></div>
+  <div class="process-grid reveal">
+    <div class="step"><div class="num">01</div><h3>Tanışma</h3><p>İhtiyaçları, beklentileri ve projenin kapsamını birlikte belirleriz.</p></div>
+    <div class="step"><div class="num">02</div><h3>Tasarım</h3><p>Plan, cephe ve mimari kararları görsel olarak netleştiririz.</p></div>
+    <div class="step"><div class="num">03</div><h3>Uygulama</h3><p>Projeyi sahada kontrollü ve planlı şekilde hayata geçiririz.</p></div>
+    <div class="step"><div class="num">04</div><h3>Teslim</h3><p>Son kontrolleri tamamlayıp yaşam alanınızı teslim ederiz.</p></div>
+  </div>
+</div></section>
+
+<section class="contact" id="iletisim"><div class="container contact-grid reveal">
+  <style>
+/* =========================
+   INC MİMARLIK FOOTER
+========================= */
+
+.inc-footer{
+  background:
+    radial-gradient(circle at 85% 20%,rgba(35,137,200,.12),transparent 30%),
+    linear-gradient(135deg,#041426,#071f38);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+
+.inc-footer-top{
+  border-bottom:1px solid rgba(255,255,255,.12);
+  padding:75px 0 65px;
+}
+
+.inc-footer-grid{
+  display:grid;
+  grid-template-columns:1.35fr .8fr 1fr 1fr;
+  gap:60px;
+  align-items:start;
+}
+
+/* LOGO ALANI */
+
+.inc-footer-brand img{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+  margin-bottom:18px;
+}
+
+.inc-footer-brand h3{
+  margin:0;
+  font:800 25px Manrope;
+  letter-spacing:.03em;
+}
+
+.inc-footer-brand small{
+  display:block;
+  margin-top:3px;
+  color:#b9cbe0;
+  font-size:10px;
+  letter-spacing:.18em;
+}
+
+.inc-footer-brand p{
+  max-width:390px;
+  color:#aebfd0;
+  font-size:14px;
+  line-height:1.8;
+  margin:22px 0 25px;
+}
+
+/* INSTAGRAM */
+
+.inc-instagram{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  color:#d6ad55;
+  font-weight:700;
+  font-size:15px;
+  transition:.3s;
+}
+
+.inc-instagram:hover{
+  color:#fff;
+  transform:translateX(4px);
+}
+
+.inc-instagram-icon{
+  width:42px;
+  height:42px;
+  border:2px solid #d6ad55;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s;
+}
+
+.inc-instagram:hover .inc-instagram-icon{
+  background:#d6ad55;
+  color:#071b31;
+}
+
+/* BAŞLIKLAR */
+
+.inc-footer-title{
+  color:#fff;
+  font:700 14px Manrope;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin:0 0 25px;
+}
+
+.inc-footer-title:after{
+  content:"";
+  display:block;
+  width:48px;
+  height:2px;
+  background:#d6ad55;
+  margin-top:11px;
+}
+
+/* LİNKLER */
+
+.inc-footer-links{
+  display:flex;
+  flex-direction:column;
+  gap:13px;
+}
+
+.inc-footer-links a{
+  color:#b9cbe0;
+  font-size:14px;
+  transition:.25s;
+}
+
+.inc-footer-links a:hover{
+  color:#fff;
+  transform:translateX(4px);
+}
+
+/* İLETİŞİM */
+
+.inc-contact{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.inc-contact-item{
+  display:flex;
+  align-items:flex-start;
+  gap:13px;
+}
+
+.inc-contact-icon{
+  width:36px;
+  min-width:36px;
+  height:36px;
+  border-radius:10px;
+  background:rgba(214,173,85,.1);
+  color:#d6ad55;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.inc-contact-item b{
+  display:block;
+  font-size:13px;
+  margin-bottom:3px;
+}
+
+.inc-contact-item span{
+  color:#aebfd0;
+  font-size:13px;
+  line-height:1.5;
+}
+
+/* SLOGAN */
+
+.inc-footer-slogan{
+  padding-top:35px;
+}
+
+.inc-footer-slogan span{
+  display:block;
+  color:#aebfd0;
+  font-size:14px;
+  letter-spacing:.22em;
+  margin-bottom:7px;
+}
+
+.inc-footer-slogan strong{
+  color:#d6ad55;
+  font:700 23px Manrope;
+  letter-spacing:.13em;
+}
+
+/* ALT */
+
+.inc-footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:22px 0;
+}
+
+.inc-footer-bottom-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.inc-footer-bottom small{
+  color:#8198ad;
+  font-size:11px;
+}
+
+.inc-footer-bottom-right{
+  color:#aebfd0;
+  font-size:11px;
+  letter-spacing:.1em;
+}
+
+.inc-footer-bottom-right b{
+  color:#d6ad55;
+}
+
+/* MOBİL */
+
+@media(max-width:900px){
+
+  .inc-footer-grid{
+    grid-template-columns:1fr 1fr;
+    gap:45px 30px;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .inc-footer-top{
+    padding:55px 0 45px;
+  }
+
+  .inc-footer-grid{
+    grid-template-columns:1fr;
+    gap:38px;
+  }
+
+  .inc-footer-bottom-inner{
+    display:block;
+  }
+
+  .inc-footer-bottom-right{
+    margin-top:10px;
+  }
+
+  .inc-footer-slogan strong{
+    font-size:19px;
+  }
+
+}
+</style>
+
+
+<footer class="inc-footer">
+
+  <div class="inc-footer-top">
+
+    <div class="container inc-footer-grid">
+
+      <!-- LOGO + INSTAGRAM -->
+      <div class="inc-footer-brand">
+
+        <img src="logo.png" alt="INC Mimarlık">
+
+        <h3>İNC MİMARLIK</h3>
+        <small>İNŞAAT PROJE LTD. ŞTİ.</small>
+
+        <p>
+          Mimari proje, cephe tasarımı, iç mimari,
+          inşaat ve proje uygulama hizmetleriyle
+          hayallerinizi gerçeğe dönüştürüyoruz.
+        </p>
+
+        <!-- INSTAGRAM -->
+        <a
+          class="inc-instagram"
+          href="https://www.instagram.com/inc_mimarlik11/"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <span class="inc-instagram-icon">
+
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+
+          </span>
+
+          <span>
+            Instagram<br>
+            <small style="letter-spacing:0;color:#aebfd0;">
+              @inc_mimarlik11
+            </small>
+          </span>
+
+        </a>
+
+      </div>
+
+
+      <!-- KURUMSAL -->
+      <div>
+
+        <h4 class="inc-footer-title">
+          Kurumsal
+        </h4>
+
+        <div class="inc-footer-links">
+
+          <a href="#anasayfa">Ana Sayfa</a>
+          <a href="#hakkimizda">Hakkımızda</a>
+          <a href="#projeler">Projeler</a>
+          <a href="#villalar">Villa Projeleri</a>
+          <a href="#ic-mimari">İç Mimari Tasarım</a>
+          <a href="#iletisim">İletişim</a>
+
+        </div>
+
+      </div>
+
+
+      <!-- İLETİŞİM -->
+      <div>
+
+        <h4 class="inc-footer-title">
+          İletişim
+        </h4>
+
+        <div class="inc-contact">
+
+          <div class="inc-contact-item">
+
+            <div class="inc-contact-icon">☎</div>
+
+            <div>
+              <b>Cumali Güden</b>
+              <span>0531 676 08 42</span>
+            </div>
+
+          </div>
+
+
+          <div class="inc-contact-item">
+
+            <div class="inc-contact-icon">☎</div>
+
+            <div>
+              <b>Hayrettin Güden</b>
+              <span>0536 725 38 85</span>
+            </div>
+
+          </div>
+
+
+          <div class="inc-contact-item">
+
+            <div class="inc-contact-icon">⌖</div>
+
+            <div>
+              <b>Adres</b>
+              <span>
+                Kasımpaşa Mah., Tavukçunefer Çk.,
+                11300 Bozüyük / Bilecik
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SLOGAN -->
+      <div class="inc-footer-slogan">
+
+        <span>MİMARİDE</span>
+
+        <strong>
+          GÜVEN &amp; ESTETİK
+        </strong>
+
+        <div style="
+          width:55px;
+          height:2px;
+          background:#d6ad55;
+          margin-top:25px;
+        "></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ALT BÖLÜM -->
+  <div class="inc-footer-bottom">
+
+    <div class="container inc-footer-bottom-inner">
+
+      <small>
+        © 2026 İNC Mimarlık. Tüm hakları saklıdır.
+      </small>
+
+      <div class="inc-footer-bottom-right">
+        Mimari Geleceği Tasarlar
+        <b>—</b>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+  <form class="form" onsubmit="sendWhatsApp(event)">
+    <h3>Proje talebi</h3>
+    <input id="name" required placeholder="Adınız Soyadınız">
+    <input id="phone" required placeholder="Telefon Numaranız">
+    <textarea id="message" placeholder="Projenizden kısaca bahsedin..."></textarea>
+    <button type="submit">WhatsApp'tan Gönder</button>
+  </form>
+
+</div></section>
+</main>
+
+<footer><div class="container footer"><div class="footer-brand"><img src="logo.png" alt=""><span>INC MİMARLIK<br><small>İNŞAAT PROJE LTD. ŞTİ.</small></span></div><small>© 2026 INC Mimarlık. Tüm hakları saklıdır.</small></div></footer>
+
+<script>
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
+document.querySelectorAll('.gallery img,.arch-item img').forEach(img=>img.addEventListener('click',e=>{e.stopPropagation();document.getElementById('lightboxImg').src=img.src;document.getElementById('lightbox').classList.add('open')}));
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
+function sendWhatsApp(e){
+ e.preventDefault();
+ const n=document.getElementById('name').value, p=document.getElementById('phone').value, m=document.getElementById('message').value;
+ const text=`Merhaba INC Mimarlık,%0A%0AAd Soyad: ${encodeURIComponent(n)}%0ATelefon: ${encodeURIComponent(p)}%0AProje: ${encodeURIComponent(m||'Bilgi almak istiyorum.')}`;
+ window.open(`https://wa.me/905316760842?text=${text}`,'_blank');
+}
+</script>
+</body>
+</html>
