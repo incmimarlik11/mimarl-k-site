@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://incmimarlik11.github.io/mimarl-k-site/sitemap.xml
