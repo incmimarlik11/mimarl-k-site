@@ -146,6 +146,41 @@ footer{background:#041426;color:#91a7bc;padding:28px 0}.footer{display:flex;alig
 .reveal{opacity:0;transform:translateY(20px);transition:.7s}.reveal.show{opacity:1;transform:none}
 .lightbox{position:fixed;inset:0;background:rgba(1,10,19,.92);display:none;align-items:center;justify-content:center;z-index:100;padding:30px}.lightbox.open{display:flex}.lightbox img{max-width:94vw;max-height:88vh;border-radius:16px}.close{position:absolute;right:25px;top:18px;color:#fff;font-size:38px;cursor:pointer}
 @media(max-width:900px){nav{display:none}.menu{display:block}.about-grid,.contact-grid,.project-feature{grid-template-columns:1fr}.project-info{padding:34px}.project-feature img{min-height:330px}.cards{grid-template-columns:1fr 1fr}.stats-grid{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.arch-item:nth-child(n){grid-column:span 6;grid-row:auto}.gallery{grid-template-columns:1fr 1fr}}
+/* MOBİL AÇILIR MENÜ DÜZELTMESİ */
+@media(max-width:900px){
+  header .container.nav{position:relative}
+  header nav.mobile{
+    display:flex;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:10px 4% 16px;
+    background:rgba(7,27,49,.98);
+    border:1px solid rgba(255,255,255,.12);
+    border-top:0;
+    border-radius:0 0 16px 16px;
+    box-shadow:0 16px 30px rgba(0,0,0,.2);
+    max-height:calc(100vh - 90px);
+    overflow-y:auto;
+  }
+  header nav.mobile a{
+    display:block;
+    padding:13px 10px;
+    opacity:1;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  header nav.mobile a:last-child{border-bottom:0}
+  header nav.mobile a.nav-cta{
+    margin-top:8px;
+    text-align:center;
+    border:1px solid rgba(214,173,85,.6);
+  }
+}
+
 @media(max-width:600px){.nav{height:70px}.brand img{width:46px;height:46px}.brand span{font-size:12px}.hero{min-height:82vh}.hero-content{padding:145px 0 62px}.hero p{font-size:16px}.stats-grid{grid-template-columns:1fr 1fr}.stat{padding:20px 12px}.stat b{font-size:24px}section{padding:76px 0}.section-head{display:block}.section-head .lead{margin-top:15px}.cards{grid-template-columns:1fr}.project-info h3{font-size:31px}.project-meta{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.gallery img{height:135px}.arch-item:nth-child(n){grid-column:span 12;min-height:250px}.arch-item img{min-height:250px}.process-grid{grid-template-columns:1fr}.contact-grid{gap:35px}.footer{display:block}.footer small{display:block;margin-top:12px}}
 
 /* VİLLA PROJESİ */
@@ -217,7 +252,7 @@ footer{background:#041426;color:#91a7bc;padding:28px 0}.footer{display:flex;alig
       <a href="#anasayfa">Anasayfa</a><a href="#hakkimizda">Hakkımızda</a><a href="#hizmetler">Hizmetler</a>
       <a href="#projeler">Projeler</a><a href="#villalar">Villalar</a><a href="#ic-mimari">İç Mimari</a><a href="#mimari">Mimari Tasarım</a><a class="nav-cta" href="#iletisim">İletişim</a>
     </nav>
-    <button class="menu" onclick="document.querySelector('nav').classList.toggle('mobile')">☰</button>
+    <button class="menu" type="button" aria-label="Menüyü aç/kapat" aria-expanded="false" onclick="toggleMobileMenu(this)">☰</button>
   </div>
 </header>
 
@@ -760,7 +795,7 @@ footer{background:#041426;color:#91a7bc;padding:28px 0}.footer{display:flex;alig
             <div>
               <b>Adres</b>
               <span>
-                Kasımpaşa Mah., Tavukçunefer Çk.,
+                Kasımpaşa Mah., 5 Org. Hüseyin Kıvrıkoğlu Cd,
                 11300 Bozüyük / Bilecik
               </span>
             </div>
@@ -828,6 +863,18 @@ footer{background:#041426;color:#91a7bc;padding:28px 0}.footer{display:flex;alig
 <footer><div class="container footer"><div class="footer-brand"><img src="logo.png" alt=""><span>INC MİMARLIK<br><small>İNŞAAT PROJE LTD. ŞTİ.</small></span></div><small>© 2026 INC Mimarlık. Tüm hakları saklıdır.</small></div></footer>
 
 <script>
+function toggleMobileMenu(button){
+  const nav=document.querySelector('header nav');
+  const isOpen=nav.classList.toggle('mobile');
+  button.setAttribute('aria-expanded',String(isOpen));
+}
+document.querySelectorAll('header nav a').forEach(link=>{
+  link.addEventListener('click',()=>{
+    const nav=document.querySelector('header nav');
+    nav.classList.remove('mobile');
+    document.querySelector('.menu').setAttribute('aria-expanded','false');
+  });
+});
 const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
 document.querySelectorAll('.gallery img,.arch-item img').forEach(img=>img.addEventListener('click',e=>{e.stopPropagation();document.getElementById('lightboxImg').src=img.src;document.getElementById('lightbox').classList.add('open')}));
